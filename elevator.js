@@ -22,8 +22,7 @@ function Elevator(speedFloorsPerSec, floorCount, floorHeight, maxUsers, startFlo
     elevator.currentFloor = 0;
     elevator.previousTruncFutureFloorIfStopped = 0;
 
-
-    elevator.buttonStates = _.map(_([0]).concat(_.range(startFloor, floorCount)), function(e, i){ return false; });
+    elevator.buttonStates = _.map([0].concat(_.range(startFloor, floorCount)), function(e, i){ return false; });
     elevator.moveCount = 0;
     elevator.removed = false;
     elevator.userSlots = _.map(_.range(elevator.maxUsers), function(user, i) {
