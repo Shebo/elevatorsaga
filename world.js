@@ -51,7 +51,7 @@ var createWorldCreator = function() {
         var destinationFloor;
         if(currentFloor === 0) {
             // Definitely going up
-            destinationFloor = _.random(1, floorCount - 1);
+            destinationFloor = _.random(49, floorCount - 1);
         } else {
             // Usually going down, but sometimes not
             if(_.random(10) === 0) {
