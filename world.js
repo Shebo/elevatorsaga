@@ -64,7 +64,6 @@ var createWorldCreator = function() {
                     destinationFloor = currentFloor - _.random(49, currentFloor-1);
                 }
 
-
                 // destinationFloor = (currentFloor + _.random(-currentFloor, floorCount -1 - currentFloor));
             } else {
                 destinationFloor = 0;
