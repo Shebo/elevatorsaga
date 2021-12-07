@@ -25,6 +25,8 @@ function Elevator(speedFloorsPerSec, floorCount, floorHeight, maxUsers, startFlo
     elevator.buttonStates = _.map([0].concat(_.range(startFloor, floorCount)), function(e, i){ return false; });
     elevator.moveCount = 0;
     elevator.removed = false;
+
+
     elevator.userSlots = _.map(_.range(elevator.maxUsers), function(user, i) {
         return { pos: [2 + (i * 10), 30], user: null};
     });
