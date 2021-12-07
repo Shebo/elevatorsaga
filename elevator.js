@@ -1,6 +1,6 @@
 function newElevStateHandler(elevator) { elevator.handleNewState(); }
 
-function Elevator(speedFloorsPerSec, floorCount, floorHeight, maxUsers) {
+function Elevator(speedFloorsPerSec, floorCount, floorHeight, maxUsers, startFloor) {
     newGuard(this, Elevator);
     Movable.call(this);
     var elevator = this;
@@ -21,7 +21,8 @@ function Elevator(speedFloorsPerSec, floorCount, floorHeight, maxUsers) {
 
     elevator.currentFloor = 0;
     elevator.previousTruncFutureFloorIfStopped = 0;
-    elevator.buttonStates = _.map(_.range(floorCount), function(e, i){ return false; });
+
+    elevator.buttonStates = _.map(_.concat([0], _.range(startFloor, floorCount)), function(e, i){ return false; });
     elevator.moveCount = 0;
     elevator.removed = false;
     elevator.userSlots = _.map(_.range(elevator.maxUsers), function(user, i) {
