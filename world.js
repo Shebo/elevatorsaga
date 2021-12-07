@@ -44,7 +44,10 @@ var createWorldCreator = function() {
     creator.spawnUserRandomly = function(floorCount, floorHeight, floors) {
         var user = creator.createRandomUser();
         user.moveTo(105+_.random(40), 0);
-        var currentFloor = _.random(1) === 0 ? 0 : _.random(floorCount - 1);
+
+        var floors_array = [0, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61];
+
+        var currentFloor = _.random(1) === 0 ? 0 : floors_array[Math.floor(Math.random() * floors_array.length)];
         var destinationFloor;
         if(currentFloor === 0) {
             // Definitely going up
